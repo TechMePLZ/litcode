@@ -28,9 +28,13 @@ public class Twosum {
         System.out.println(Arrays.toString(sol));
     }
     public static int[] solution(int[] nums, int target){
+       // задачем длинну массива
         int n = nums.length;
+        // Создаем хэш мапу куда сложим наш массив, где значение это ключ, а индекс как значение
         Map<Integer, Integer> map = new HashMap<>();
+        // создаем массив для решения длиной 2
         int[] result = new int[2];
+        // проходим в цикле по массиву, и если ключ в мапе равен разнице таргета и значению то кладем в резалт
         for (int i = 0; i < n; i++) {
             if (map.containsKey(target - nums[i])) {
                 result[1] = i;
@@ -41,7 +45,5 @@ public class Twosum {
         }
         return result;
     }
-
-
 
 }
